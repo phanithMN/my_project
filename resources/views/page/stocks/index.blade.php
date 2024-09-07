@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('title') {{'Stock'}} @endsection
+@section('title') {{'Stocks'}} @endsection
 @section('content')
 
 <div class="container">
@@ -86,24 +86,28 @@
                     <table id="add-row" class="display table table-striped table-hover dataTable" role="grid" aria-describedby="add-row_info">
                       <thead>
                         <tr role="row">
+                          <th class="w-1">#</th>
                           <th>SKU</th>
                           <th>Product</th>
                           <th>Name</th>
                           <th>Price</th>
                           <th>Quantity</th>
                           <th>Status</th>
+                          <th>Date</th>
                           <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
                         @foreach ($stocks as $stock)
                           <tr role="row" class="odd">
+                            <td>{{$stock->id}}</td>
                             <td>{{$stock->sku}}</td>
                             <td>{{$stock->product_name}}</td>
                             <td>{{$stock->name}}</td>
                             <td>${{$stock->price}}</td>
                             <td>{{$stock->quantity}}</td>
                             <td><span class="{{$stock->status_name == "Income" ? "color-income" : "color-return" }} status">{{$stock->status_name}}</span></td>
+                            <td>{{$stock->created_at}}</td>
                             <td>
                               <div class="form-button-action">
                                 <a  href="{{ route('update-stock', $stock->id) }} type="button" title="Edit Item" class="btn btn-link btn-primary btn-lg">

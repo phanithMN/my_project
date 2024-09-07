@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('title') {{'Insert New Stock'}} @endsection
+@section('title') {{'Insert Product In/Out Stock'}} @endsection
 @section('content')
 
 <div class="container">

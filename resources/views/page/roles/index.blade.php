@@ -44,16 +44,16 @@
                     <table id="add-row" class="display table table-striped table-hover dataTable" role="grid" aria-describedby="add-row_info">
                       <thead>
                         <tr role="row">
+                          <th style="width: 1%">#</th>
                           <th>Name</th>
-                          <th>User ID</th>
                           <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
                         @foreach ($roles as $role)
                           <tr role="row" class="odd">
+                            <td>{{$role->id}}</td>
                             <td>{{$role->name}}</td>
-                            <td>{{$role->user_id}}</td>
                            
                             <td>
                               <div class="form-button-action">
